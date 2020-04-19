@@ -1,0 +1,50 @@
+body {
+    background: #f9d9d5;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+section div {
+    padding-right: 0;
+}
+
+#mainNavbar {
+    font-size: 1.5rem;
+    font-weight: 100;
+    background-color: #f9d9d5 ;
+}
+
+
+#mainNavbar .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: #EA1C2C;
+}
+
+#mainNavbar .nav-link {
+    color: white;
+}
+
+#mainNavbar .nav-link:hover {
+    color: #EA1C2C;
+}
+
+#headingGroup h1 {
+    font-weight: 100;
+    font-size: 3rem;
+}
+
+/* changing text size when screen size changes */
+@media (max-width: 1200px) {
+    #headingGroup h1 {
+        font-size: 2.5rem;
+    }
