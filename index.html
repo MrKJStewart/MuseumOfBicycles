@@ -12,12 +12,14 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
 	crossorigin="anonymous">
 	<!-- Custom CSS -->
-    <link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="app.css" type="text/css">
+	<script type="text/javascript" src="calc.js"></script>
 
 	<title>Museum of Bicycles</title>
 </head>
   
-<body>
+<body onload="price()">
+	<a name="top"></a>
 	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 sticky-top">
 		<a href="#" class="navbar-brand"><i class="fas fa-bicycle"></i> BICYCLES</a>
 			<!-- data-target is what (ID) is being collapsed -->
@@ -27,14 +29,14 @@
 		<div id="navLinks" class="collapse navbar-collapse">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a href="#Home" class="nav-link">HOME</a>
+					<a href="#top" class="nav-link">HOME</a>
 				</li>
 				<li class="nav-item">
 					<!-- target="_blank" opens link in a new tab -->
-					<a href="https://www.targetvelo.com/news/4-great-cycling-museums/" target="_blank" class="nav-link">ABOUT</a>
+					<a href="#about" class="nav-link">ABOUT</a>
 				</li>
 				<li>
-					<a href="https://www.cyclemuseum.org.uk/" target="_blank" class="nav-link">TICKETS</a>
+					<a href="#tickets" class="nav-link">TICKETS</a>
 				</li>
 			</ul>
 		</div>
@@ -59,7 +61,7 @@
 		</div>
 	</section>
 
-	<section class="bike container-fluid px-0 py-0">
+	<section id="about" class="bike container-fluid px-0 py-0">
 		<div class="row align-items-center">
 			<div class="col-md-6 order-2 order-md-1">
 				<img class="img-fluid" src="https://images.unsplash.com/photo-1485965120184-e220f721d03e" alt="">
@@ -139,8 +141,66 @@
 		</div>
 	</section>
 	
-	
-	
+	<section id="tickets" class="container-fluid px-0 py-0">
+		<hr>
+		<div class="text-center">
+			<h2>TICKETS</h2>
+			<i class="fas fa-ticket-alt fa-3x" style="color:#EA1C2C"></i>
+			<p>Calculate your ticket costs here</p>
+			<p>Adults £4 <span style="color:#EA1C2C">//</span> Children £2.50</p>
+		</div>
+
+		<div class="row">
+			<div class="col-6 text-right ticketChoice">
+				Adult: 
+			</div>
+			<div class="col-6 align-items-start ticketChoice">
+				<form name="TicketCost">
+					<select id="adultValue" onchange="price()">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+				</form>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-6 text-right ticketChoice">
+				Child: 
+			</div>
+			<div class="col-6 align-items-start ticketChoice">
+				<form name="TicketCost">
+					<select id="childValue" onchange="price()">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+				</form>
+			</div>
+		</div>	
+
+		<div class="row">
+			<div class="col-12 ticketChoice py-3">
+				<p id="printout"></p>
+			</div>
+		</div>	
+	</section>
+	<hr>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p class="text-center">Created by Kieron Stewart</p>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
